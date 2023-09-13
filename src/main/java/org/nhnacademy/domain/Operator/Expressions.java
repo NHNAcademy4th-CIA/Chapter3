@@ -7,7 +7,7 @@ public class Expressions {
     private final double leftValue;
     private final double rightValue;
     private final String operator;
-    private final String pattern = "^[+|\\-|*|/]$";
+    private final String pattern = "^[+|\\- |*|/]$";
 
     public Expressions(double leftValue, String operator, double rightValue){
         this.leftValue=leftValue;
@@ -18,8 +18,9 @@ public class Expressions {
         }
         this.operator=matcher.group();
     }
-    @Override
-    public String toString(){
-        return leftValue+" "+operator+" "+rightValue;
-    }
+
+//    @Override
+//    public String toString(){
+//
+//    }
 }
