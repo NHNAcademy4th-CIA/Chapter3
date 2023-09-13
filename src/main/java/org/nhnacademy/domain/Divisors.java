@@ -1,7 +1,7 @@
 package org.nhnacademy.domain;
 
 public class Divisors {
-    private Divisors(){};
+    private Divisors(){}
     public static int count(int number){
         int count =2;
         int lastNum = number;
@@ -10,7 +10,7 @@ public class Divisors {
             if(number%i==0)
             {
                 lastNum = number/i;
-                count++;
+                count+=2;
             }
         }
         return count;
