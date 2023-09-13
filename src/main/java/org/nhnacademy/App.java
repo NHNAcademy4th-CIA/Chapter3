@@ -1,7 +1,11 @@
 package org.nhnacademy;
 
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+import java.util.StringTokenizer;
 import org.nhnacademy.domain.Dice;
 import org.nhnacademy.domain.Divisors;
+import org.nhnacademy.domain.Expressions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,11 +13,14 @@ import org.slf4j.LoggerFactory;
  * Hello world!
  */
 public class App {
+    private static Scanner scanner = new Scanner(System.in);
+    private static StringTokenizer stringTokenizer;
     private static Logger logger = LoggerFactory.getLogger(App.class);
 
     public static void main(String[] args) {
         logger.info("{}", Q1());
         logger.info("1~10000중 가장 큰 값은? {}", Q2());
+        Q3();
     }
 
     public static int Q1() {
@@ -37,6 +44,28 @@ public class App {
         }
 
         return max;
+    }
+    public static void Q3(){
+        logger.info("식을 작성해주세요. : ");
+        while(true) {
+            try {
+                stringTokenizer = new StringTokenizer(scanner.nextLine());
+                double leftValue = Double.parseDouble(stringTokenizer.nextToken());
+                if (leftValue == 0) {
+                    break;
+                }
+                String operator = stringTokenizer.nextToken();
+                double rightValue = Double.parseDouble(stringTokenizer.nextToken());
+
+                logger.info("{}", new Expressions(leftValue, operator, rightValue));
+            }catch (NoSuchElementException e)
+            {
+                logger.warn("입력값의 필수 인자는 3개입니다. 만일 종료 하고싶으시면 0을 입력해주세요.");
+            }catch (IllegalArgumentException e)
+            {
+                logger.warn(e.toString());
+            }
+        }
     }
 
     private static boolean isSnakeEye(int pip1, int pip2) {
