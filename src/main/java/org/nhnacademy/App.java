@@ -22,12 +22,13 @@ public class App {
     private static Logger logger = LoggerFactory.getLogger(App.class);
 
     public static void main(String[] args) {
-//        logger.info("{}", Q1());
+        logger.info("{}", Q1());
         logger.info("1~10000중 가장 큰 값은? {}", Q2());
-//        Q3();
-//        Q4();
-//        Q5();
-//        Q7();
+        Q3();
+        Q4();
+        Q5();
+        q6();
+        Q7();
     }
 
     public static int Q1() {
@@ -111,7 +112,32 @@ public class App {
         }
         logger.info("총 매출은 {} 보고안한 도시수 {}", City.getTotalSale(), count);
     }
+    public static void q6(){
+            int max = 0;
+            int maxArray[] = new int[10000];
+            for (int i = 1; i <= 10000; i++) {
+                int count = Divisors.count(i);
+                logger.info("{} {}",i,count);
+                maxArray[i-1] = count;
+                if(max < count) {
+                    max=count;
+                }
+            }
+        logger.info("1부터 10000 사이의 정수 중에서,");
+            logger.info("최대 제수 수는 {}였습니다.",max);
+            logger.info("제수가 많은 숫자는 다음과 같습니다.");
+        int i=1;
 
+        for(int a : maxArray)
+            {
+                if(a==max)
+                {
+                    logger.info("{}",i);
+                }
+                i++;
+            }
+
+    }
     public static void Q7() {
         int count = 1;
         int birthDay3Count = 0;

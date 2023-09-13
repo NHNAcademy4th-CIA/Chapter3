@@ -1,5 +1,7 @@
 package org.nhnacademy.domain;
 
+import java.util.Arrays;
+
 public class Divisors {
     private Divisors(){}
     public static int count(int number){
@@ -14,5 +16,9 @@ public class Divisors {
             }
         }
         return count;
+    }
+    public static boolean isPresent(int[] list, int x) {
+        return Arrays.stream(list)
+                .anyMatch(b -> b == x);
     }
 }
