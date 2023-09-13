@@ -10,6 +10,7 @@ public class Problem4 {
 
 
     private static final Logger logger = LoggerFactory.getLogger(Problem4.class);
+
     public static void problem4() {
         Scanner sc = new Scanner(System.in);
 
@@ -19,16 +20,21 @@ public class Problem4 {
 
         String temp = "";
 
+
         for (int i = 0; i < str.length(); i++) {
 
-            if (Character.isLetter(str.charAt(i))) {
-                temp += str.charAt(i);
-            } else {
+            char ch = str.charAt(i);
+
+            if (((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) || ch == '\'') {
+                temp += ch;
+            }
+            else{
                 if (!temp.isEmpty()) {
                     list.add(temp);
                     temp = "";
                 }
             }
+
         }
 
         for (String a : list) {
