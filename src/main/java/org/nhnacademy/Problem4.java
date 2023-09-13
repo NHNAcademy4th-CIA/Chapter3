@@ -10,7 +10,7 @@ public class Problem4 {
 
 
     private static final Logger logger = LoggerFactory.getLogger(Problem4.class);
-    public static void go() {
+    public static void problem4() {
         Scanner sc = new Scanner(System.in);
 
         String str = sc.nextLine();
