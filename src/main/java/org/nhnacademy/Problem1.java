@@ -1,12 +1,14 @@
 package org.nhnacademy;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Problem {
+public class Problem1 {
 
 
-    private static final Logger logger = LoggerFactory.getLogger(Problem.class);
+    private static final Logger logger = LoggerFactory.getLogger(Problem1.class);
 
     public static void problem1() {
 
@@ -24,21 +26,7 @@ public class Problem {
         }
     }
 
-    public static void problem2(){
-
-        int []primeNumber = new int[10001];
-
-        primeNumber[0]=0;
-
-        // 약수의 개수 = 소인수분해 했을때
-        // 소인수의 지수에 1을 더한 수들을 곱한 값
 
 
-        for(int i=1;i<=10000;i++){
-
-        }
-
-
-    }
 
 }
