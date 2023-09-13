@@ -1,0 +1,202 @@
+= Chapter3
+Firstname Lastname <author@asciidoctor.org>
+3.0, July 29, 2022: AsciiDoc article template
+:toc:
+:icons: font
+:url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
+
+
+== 1.알고리즘 이란 무엇입니까 ?
+.알고리즘이란?
+====
+문제해결을 위한 일련의 과정
+====
+
+== 2."의사 코드"의 의미와 이것이 알고리즘 개발에 어떻게 유용한지 간략하게 설명하십시오.
+.의사코드란?
+====
+프로그래밍 언어가 아닌 사람이 나타낼 수 있는 코드
+====
+
+== 3.블록문 이란 무엇인가요 ? Java 프로그램에서 블록 문은 어떻게 사용됩니까?
+.블록문이란?
+====
+서브루틴
+====
+
+== 4.while 루프와 do..while 루프 의 주요 차이점은 무엇입니까 ?
+.차이?
+====
+while문은 최초의 조건이 맞지않으면 실행하지 않지만 do while문은 조건과는 상관없이 무조건 한번은 실행된다.
+====
+
+== 5.루프를 프라이밍한다는 것은 무엇을 의미합니까 ?
+.차이?
+====
+while문은 최초의 조건이 맞지않으면 실행하지 않지만 do while문은 조건과는 상관없이 무조건 한번은 실행된다.
+====
+
+== 6. 애니메이션 의 의미 와 컴퓨터가 애니메이션을 표시하는 방법을 설명합니다.
+.프레임
+====
+while문은 최초의 조건이 맞지않으면 실행하지 않지만 do while문은 조건과는 상관없이 무조건 한번은 실행된다.
+====
+
+
+== 7. 3부터 36까지 3의 모든 배수, 즉 3 6 9 12 15 18 21 24 27 30 33 36을 출력하는 for 루프 를 작성하세요 .
+.code
+====
+for(int i=3;i<=36;i++)
+{
+    if(i%3==0)
+    {
+        sout(i);
+    }
+}
+====
+
+
+== 8.다음 main() 루틴을 작성하여 사용자에게 정수를 입력하도록 요청하고, 사용자의 응답을 읽고, 입력한 숫자가 짝수인지 홀수인지 알려줍니다. ( TextIO.getInt()를 사용하여 정수를 읽을 수 있습니다. 정수 n은 n % 2 == 0 인 경우에도 마찬가지입니다 .)
+.code
+====
+public static void main(String[] args)
+{
+    Scanner scanner = new Scanner(System.in);
+    if(scanner.nextInt()%2=0)
+        sout(짝수)
+    else{
+        sout(홀수)
+    }
+}
+====
+
+
+== 9. 1부터 10까지의 범위에서 선택된 두 개의 서로 다른 임의의 정수를 인쇄하는 코드 세그먼트를 작성하세요. 가능한 모든 출력은 동일한 확률을 가져야 합니다. 힌트: 두 개의 임의의 숫자를 쉽게 선택할 수 있지만 선택한 두 숫자가 동일할 수도 있다는 사실을 고려해야 합니다..프레임
+.code
+====
+int x,y;
+do {
+    x = (int)(10*Math.random() + 1);
+    y = (int)(10*Math.random() + 1);
+} while (x == y);
+System.out.println(x +""+ y);
+====
+
+
+== 10.s1 및 s2 가 String 유형의 변수이고 해당 값이 int 유형 값의 문자열 표현일 것으로 예상된다고 가정합니다 . 해당 값의 정수 합계를 계산하고 인쇄하거나 값을 정수로 성공적으로 변환할 수 없는 경우 오류 메시지를 인쇄하는 코드 세그먼트를 작성하세요. ( try..catch 문을 사용하세요.).프레임
+.code
+====
+String s1 = "194";
+String s2 = "103";
+try{
+    Integer.parseInt(s1);
+    Intger.parseInt(s2);
+
+}catch(NumberFormatException e )
+{
+    log.info(e.toString);
+}
+====
+
+
+== 11.Show the exact output that would be produced by the following main() routine:
+public static void main(String[] args) {
+    int N;
+    N = 1;
+    while (N <= 32) {
+        N = 2 * N;
+        System.out.println(N);
+    }
+}
+
+.reslut
+====
+2
+4
+8
+16
+32
+64
+====
+
+
+== 12. Show the exact output produced by the following main() routine:
+
+public static void main(String[] args) {
+    int x,y;
+    x = 5;
+    y = 1;
+    while (x > 0) {
+        x = x - 1;
+        y = y * x;
+        System.out.println(y);
+    }
+}
+
+.reslut
+====
+4
+12
+24
+24
+0
+====
+
+
+== 13. What output is produced by the following program segment? Why? (Recall that name.charAt(i) is the i-th character in the string, name.)
+
+String name;
+int i;
+boolean startWord;
+name = "Richard M. Nixon";
+startWord = true;
+for (i = 0; i < name.length(); i++) {
+    if (startWord)
+        System.out.println(name.charAt(i));
+    if (name.charAt(i) == ' ')
+        startWord = true;
+    else
+        startWord = false;
+}
+
+.reslut
+====
+R
+M
+N
+빈공백뒤 만 true고 초기값도 true이기 떄문에
+====
+
+
+== 14.숫자가 int[] 유형의 배열이라고 가정합니다 . 배열에서 숫자 42가 나타나는 횟수를 계산하고 출력하는 코드 세그먼트를 작성하세요
+.code
+====
+int num[];
+int count = 0;
+for(int a: num)
+{
+    if(a==42)
+        count++;
+}
+sout(count);
+====
+
+
+
+== 15. 숫자 배열의 범위를 배열의 최대값에서 최소값을 뺀 값으로 정의합니다 . raceTimes가 double[] 유형의 배열 이라고 가정합니다 . raceTimes 범위를 찾아 인쇄하는 코드 세그먼트를 작성하세요 .
+
+.code
+====
+int max = 0;
+int min = Math.min();
+int[] arr;
+for(int i=0;arr.length;i++)
+{
+    max = (max<=arr[i])?arr[i]:max;
+    min = (min<=arr[i])?min:arr[i];
+
+}
+sout(max-min);
+====
+
+
