@@ -10,12 +10,9 @@ public class Exercise6 {
     public static void exercise6() {
         int maxDivisor = 0;
         ArrayList<Integer> numbers = new ArrayList<>();
-        /**
-         * max divisor
-         * max number
-         */
+
         for (int i = 1; i < 10000; i++) {
-            int count = gcp(i);
+            int count = getMaxDivisor(i);
             if (count > maxDivisor) {
                 maxDivisor = count;
                 numbers.clear();
@@ -30,7 +27,7 @@ public class Exercise6 {
                 "Numbers with that many divisors include: {}", maxDivisor, numbers);
     }
 
-    static int gcp(int i) {
+    static int getMaxDivisor(int i) {
         int count = 0;
         for (int j = 2; j <= i; j++) {
             if (i % j == 0) {

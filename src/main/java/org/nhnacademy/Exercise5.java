@@ -18,8 +18,9 @@ public class Exercise5 {
         try (FileReader fileReader = new FileReader("src/main/resources/sales.dat")) {
 
             while ((read = fileReader.read(buffer)) != -1) {
-                // readline 대신 byte를 설정해서 input
+                // read() : 버퍼에 파일의 데이터를 읽어 저장, 읽은 문자 개수를 리턴
                 String[] strArr = new String(buffer, 0, read).split("\n");
+                // char value[](source of characters), int offset(initial offset), int count(length)
                 for (String str : strArr) {
                     int index = str.indexOf(":");
                     String sales = str.substring(index + 3);

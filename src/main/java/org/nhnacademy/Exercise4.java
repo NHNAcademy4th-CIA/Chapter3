@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Exercise4 {
+    Exercise4() {
+
+    }
 
     public static String exercise4() {
         Scanner scanner = new Scanner(System.in);
@@ -19,7 +22,10 @@ public class Exercise4 {
             }
             answer.add(sb.toString());
         }
-        sb = new StringBuilder();
+        return addLineBreak(answer);
+    }
+    private static String addLineBreak(ArrayList<String> answer) {
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < answer.size(); i++) {
             sb.append(answer.get(i));
             if(i!= answer.size()-1) {
