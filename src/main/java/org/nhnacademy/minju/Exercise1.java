@@ -1,4 +1,4 @@
-package org.nhnacademy;
+package org.nhnacademy.minju;
 
 class Exercise1 {
     // 주사위 두 눈이 모두 1이 나올때까지의 굴린 횟수

@@ -1,5 +1,7 @@
-package org.nhnacademy;
+package org.nhnacademy.minju;
 
+import java.util.HashSet;
+import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,53 +21,45 @@ public class Exercise7 {
     private static int q1() {
         int count = 0;
         int[] checked = new int[365];
-        while (true) {
-            int birthday = (int) (Math.random() * 365);
+        int birthday;
+        do {
+            birthday = (int) (Math.random() * 365);
             count++;
-
-            if (checked[birthday] == 3) {
-                break;
-            }
 
             checked[birthday] += 1;
 
-        }
+        } while (checked[birthday] == 3);
         return count;
     }
 
     private static int q2() {
         int count = 0;
-        int difBirthday = 0;
+        int sameBirthday = 0;
         boolean[] checked = new boolean[365];
 
         while (count <= 365) {
             int birthday = (int) (Math.random() * 365);
             count++;
 
-            if (!checked[birthday]) {
-                checked[birthday] = true;
+            if (checked[birthday]) {
+                sameBirthday++;
             }
         }
-        for (boolean b : checked) {
-            if (!b) {
-                difBirthday++;
-            }
-        }
-        return difBirthday;
+        return 365 - sameBirthday;
     }
 
     private static int q3() {
         int count = 0;
-        boolean[] checked = new boolean[365];
+        Set<Integer> set = new HashSet<>();
+        // 365개의 생일을 만날 때까지
         while (true) {
-            int birthday;
-            birthday = (int) (Math.random() * 365);
+            int birthday = (int) (Math.random() * 365);
             count++;
 
-            if (checked[birthday]) {
+            if (set.size() == 365) {
                 break;
             }
-            checked[birthday] = true;
+            set.add(birthday);
         }
         return count;
     }

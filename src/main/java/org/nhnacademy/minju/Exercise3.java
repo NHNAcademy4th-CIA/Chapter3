@@ -1,4 +1,4 @@
-package org.nhnacademy;
+package org.nhnacademy.minju;
 
 import java.util.Scanner;
 import java.util.StringTokenizer;
@@ -14,7 +14,6 @@ public class Exercise3 {
     public static void exercise3() {
         String[] expression = new String[3];
         StringTokenizer st;
-        boolean flag = true;
         String input;
 
         Scanner scanner = new Scanner(System.in);
@@ -28,7 +27,7 @@ public class Exercise3 {
             st = new StringTokenizer(input);
             for (int i = 0; st.hasMoreTokens(); i++) {
                 String s = st.nextToken();
-                
+
                 if (Pattern.matches(number, s) || Pattern.matches(operator, s)) {
                     expression[i] = s;
                     continue;

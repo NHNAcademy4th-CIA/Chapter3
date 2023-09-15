@@ -1,4 +1,4 @@
-package org.nhnacademy;
+package org.nhnacademy.minju;
 
 import java.util.ArrayList;
 import org.slf4j.Logger;

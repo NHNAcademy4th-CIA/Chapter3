@@ -1,7 +1,4 @@
-package org.nhnacademy;
-
-import java.io.File;
-import java.util.Scanner;
+package org.nhnacademy.minju;
 
 /**
  * Hello world!
