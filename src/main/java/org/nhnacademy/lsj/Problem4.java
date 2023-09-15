@@ -1,4 +1,4 @@
-package org.nhnacademy;
+package org.nhnacademy.lsj;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,12 @@ public class Problem4 {
             char ch = str.charAt(i);
 
             if (((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) || ch == '\'') {
-                temp += ch;
+
+                if(ch=='\''){
+                    if(!temp.isEmpty()) // 앞뒤로 있어야 추가해줄꺼야
+                        temp += ch;
+                }
+
             }
             else{
                 if (!temp.isEmpty()) {

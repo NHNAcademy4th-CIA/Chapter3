@@ -1,9 +1,8 @@
-package org.nhnacademy;
+package org.nhnacademy.lsj;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

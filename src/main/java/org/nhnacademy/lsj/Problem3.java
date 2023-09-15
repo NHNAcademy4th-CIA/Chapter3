@@ -1,4 +1,4 @@
-package org.nhnacademy;
+package org.nhnacademy.lsj;
 
 import java.util.Scanner;
 import java.util.StringTokenizer;
