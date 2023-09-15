@@ -16,7 +16,6 @@ public class Problem5 {
     public static void problem5() throws IOException {
 
 
-        BufferedReader bf = new BufferedReader(new FileReader("src/main/resources/test.txt"));
 
 
         String str = "";
@@ -24,21 +23,35 @@ public class Problem5 {
         double answer = 0;
         int count=0;
 
-        while ((str = bf.readLine()) != null) {
-            StringBuilder result= new StringBuilder();
 
-            for (int i = 0; i < str.length(); i++) {
-                if(str.charAt(i)>='0'&&str.charAt(i)<='9'){
-                    result.append(str.charAt(i));
+        StringBuilder result= new StringBuilder();
+
+
+        // 소괄호 안에 넣으면 알아서 close 해준다.
+        try(BufferedReader bf = new BufferedReader(new FileReader("src/main/resources/test.txt"))){
+
+            while ((str = bf.readLine()) != null) {
+
+                for (int i = 0; i < str.length(); i++) {
+                    if(str.charAt(i)>='0'&&str.charAt(i)<='9'){ // 소수점 연산 추가하기
+                        result.append(str.charAt(i));
+                    }
                 }
-            }
 
-            if(result.length() == 0){
-                count++;
-            }else{
-                answer+=Double.parseDouble(result.toString());
+                if(result.length() == 0){
+                    count++;
+                }else{
+                    answer+=Double.parseDouble(result.toString());
+                }
+
+                result.setLength(0);
             }
+        }catch (IOException e){
+            logger.info(e.getMessage());
         }
+
+
+
 
         logger.info("총 합은 {}\n보고가 없는 도시 수 : {}",answer,count);
 
