@@ -1,0 +1,8 @@
+
+˜
+java:S1130	"vRemove the declaration of thrown exception 'java.io.FileNotFoundException', as it cannot be thrown from method's body.(òá–Ýýÿÿÿÿ8‘Ùû¯©1
+X	java:S125
+"<This block of commented-out lines of code should be removed.( ”í“8³û¯©1
+]	java:S125"<This block of commented-out lines of code should be removed.(Šº­£øÿÿÿÿ8’Ùû¯©1
+G
+java:S1068"*Remove this unused "logger" private field.( á©8’Ùû¯©1

@@ -1,0 +1,107 @@
+Question 1: What is an algorithm?
+컴퓨터가 수행할 작업의 대략적인 개요를 완전하고 모호하지 않는 단계별 절차로 구체화하는 것
+유한한 수의 단계를 거친 후 항상 종료된다
+Question 2: Explain briefly what is meant by "pseudocode" and how is it useful in the development of algorithms.
+코드가 어떻게 작동하는지에 대한 논리를 서술해놓은 것
+Question 3: What is a block statement? How are block statements used in Java programs?
+{} 안에 표현식을 포함하고 있는 문장, 반복문이나 조건문에서 block statement 안의 내용이 참이면 반복된다.
+Question 4: What is the main difference between a while loop and a do..while loop?
+- while문은 처음에 조건식을 검사한다.
+- do…while문은 처음에 block statement 안을 수행하고 조건식을 검사한다.
+Question 5: What does it mean to prime a loop?
+- while 루프가 처음 실행될 때 조건에 걸릴 수 있도록 조건식을 설정
+- → 루프의 조건식이 변수와 관련되었다면 해당 변수를 루프 전에 초기화하는 것
+Question 6: Explain what is meant by an animation and how a computer displays an animation.
+
+Question 7: Write a for loop that will print out all the multiples of 3 from 3 to 36, that is: 3 6 9 12 15 18 21 24 27 30 33 36.
+for(int i=1;i≤12;i++) System.out.print(i*3 + “ “);
+Question 8: Fill in the following main() routine so that it will ask the user to enter an integer, read the user's response, and tell the user whether the number entered is even or odd. (You can use TextIO.getInt() to read the integer. Recall that an integer n is even if n % 2 == 0.)
+public static void main(String[] args) {
+    int n = TextIO.getInt();
+    if(n%2==0) TextIO.putln("number is even");
+    else TextIO.putln("number is odd");
+}
+Question 9:Write a code segment that will print out two different random integers selected from the range 1 to 10. All possible outputs should have the same probability. Hint: You can easily select two random numbers, but you have to account for the fact that the two numbers that you pick might be the same.
+        int num = (int)(Math.random()*10)+1;
+        int num2 = (int)(Math.random()*10)+1;
+        while(num2==num) {
+            num2 = (int)(Math.random()*10)+1;
+        }
+        System.out.println(num + ", " + num2);
+Question 10:Suppose that s1 and s2 are variables of type String, whose values are expected to be string representations of values of type int. Write a code segment that will compute and print the integer sum of those values, or will print an error message if the values cannot successfully be converted into integers. (Use a try..catch statement.)
+        Scanner scanner = new Scanner(System.in);
+        String s1 = scanner.nextLine();
+        String s2 = scanner.nextLine();
+
+        try {
+            int i1 = Integer.parseInt(s1);
+            int i2 = Integer.parseInt(s2);
+            System.out.println(i1+i2);
+        } catch (NumberFormatException e){
+            System.out.println(e.getMessage());
+        }
+Question 11:Show the exact output that would be produced by the following main() routine:
+public static void main(String[] args) {
+    int N;
+    N = 1;
+    while (N <= 32) {
+       N = 2 * N;
+       System.out.println(N);   
+    }
+}
+2
+4
+8
+16
+32
+64
+Question 12:Show the exact output produced by the following main() routine:
+public static void main(String[] args) {
+   int x,y;
+   x = 5;
+   y = 1;
+   while (x > 0) {
+      x = x - 1;
+      y = y * x;
+      System.out.println(y);
+   }
+}
+4
+12
+24
+24
+0
+Question 13:What output is produced by the following program segment? Why? (Recall that name.charAt(i) is the i-th character in the string, name.)
+String name;
+int i;
+boolean startWord;
+
+name = "Richard M. Nixon";
+startWord = true;
+for (i = 0; i < name.length(); i++) {
+   if (startWord)
+      System.out.println(name.charAt(i));
+   if (name.charAt(i) == ' ')
+      startWord = true;
+   else
+      startWord = false;
+}
+R
+M
+N
+0번째 값 출력, 이후 공백 다음 인덱스일 때 startWord가 true이므로 그 인덱스의 문자가 출력된다. else if가 아니므로 출력 후 다시 startWord는 false가 된다.
+Question 14:Suppose that numbers is an array of type int[]. Write a code segment that will count and output the number of times that the number 42 occurs in the array.
+int count = 0;
+for(int number: numbers) {
+    if(number == 42) count++;
+}
+System.out.println(count);
+Question 15:Define the range of an array of numbers to be the maximum value in the array minus the minimum value. Suppose that raceTimes is an array of type double[]. Write a code segment that will find and print the range of raceTimes.
+int maxValue = 0;
+int minValue = numbers[0];
+for(int number : numbers) {
+    if(maxValue<number) maxValue = number;
+    if(minValue > number) minValue = number;
+}
+double[] array = new double[maxValue-minValue];
+System.out.println("range is 0 to " + array.length);
