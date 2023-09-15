@@ -7,8 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Exercise3 {
-    private static final String number = "\\d*\\.*\\d*";
-    private static final String operator = "^[+|\\-|*|/]?$";
+//    private static final String number = ;
+//    private static final String operator = ;
+    private static final String[] regex = {"\\d*\\.*\\d*", "^[+|\\-|*|/]?$"};
     private static final Logger logger = LoggerFactory.getLogger(Exercise3.class);
 
     public static void exercise3() {
@@ -27,8 +28,8 @@ public class Exercise3 {
             st = new StringTokenizer(input);
             for (int i = 0; st.hasMoreTokens(); i++) {
                 String s = st.nextToken();
-
-                if (Pattern.matches(number, s) || Pattern.matches(operator, s)) {
+                // 17.3 + 2
+                if (Pattern.matches(regex[i%2], s)) {
                     expression[i] = s;
                     continue;
                 }
