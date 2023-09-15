@@ -1,16 +1,15 @@
-package org.nhnacademy;
+package org.nhnacademy.lsj;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Problem6 {
+public class Problem2 {
 
-    public static final Logger logger = LoggerFactory.getLogger(Problem6.class);
+    public static final Logger logger = LoggerFactory.getLogger(Problem2.class);
 
     public static int checkDivisor(List<Integer> list, int num) {
 
@@ -19,16 +18,19 @@ public class Problem6 {
 
         while (num > 1) {
             for (int i = 0; i < list.size(); i++) {
+
                 int number = list.get(i);
                 if (num % number == 0) {
                     num /= number;
                     if (m.get(number) == null) {
                         m.put(number, 1);
-                    } else {
-                        m.put(number, m.get(number) + 1);
+                        continue;
                     }
-                    break;
+                    m.put(number, m.get(number) + 1);
+                    continue;
                 }
+                break;
+
             }
         }
 
@@ -65,11 +67,13 @@ public class Problem6 {
 
     }
 
-    public static void problem6() {
+    public static void problem2() {
 
         List<Integer> list = makeList();
 
-        List<Pair> answer = new ArrayList<>();
+
+        int maxDivisorNumber = 0;
+        int divisorNumber = 0;
 
 
         for (int i = 2; i <= 10000; i++) {
@@ -77,53 +81,17 @@ public class Problem6 {
 
             if (!list.contains(i)) {
                 num = checkDivisor(list, i);
-                answer.add(new Pair(num, i));
+                if (num > divisorNumber) {
+                    divisorNumber = num; // 약수개수
+                    maxDivisorNumber = i; // 가장 많은 약수를 가진 정수
+                }
             }
-        }
 
-        Collections.sort(answer);
-
-        Pair flag = answer.get(0);
-
-        for (int i = 0; i < answer.size(); i++) {
-
-
-            if (flag.getDivisorNumber() == answer.get(i).getDivisorNumber()) {
-                logger.info("가장 많은 약수를 가진 정수 {} , 약수의 개수는 {}", answer.get(i).getDivisorNumber(), answer.get(i).getNumber());
-            } else {
-                return;
-            }
         }
 
 
+        logger.info("가장 많은 약수를 가진 정수 {} , 약수의 개수는 {}", maxDivisorNumber, divisorNumber);
+
     }
-
-}
-
-class Pair implements Comparable {
-
-    private final int divisorNumber;
-    private final int number;
-
-
-    public Pair(int divisorNumber, int number) {
-        this.divisorNumber = divisorNumber;
-        this.number = number;
-    }
-
-    public int getDivisorNumber() {
-        return divisorNumber;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        Pair p = (Pair) o;
-        return p.divisorNumber - this.divisorNumber;
-    }
-
 
 }

@@ -1,15 +1,16 @@
-package org.nhnacademy;
+package org.nhnacademy.lsj;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Problem2 {
+public class Problem6 {
 
-    public static final Logger logger = LoggerFactory.getLogger(Problem2.class);
+    public static final Logger logger = LoggerFactory.getLogger(Problem6.class);
 
     public static int checkDivisor(List<Integer> list, int num) {
 
@@ -64,32 +65,66 @@ public class Problem2 {
 
     }
 
-    public static void problem2() {
+    public static void problem6() {
 
         List<Integer> list = makeList();
 
+        List<Pair> answer = new ArrayList<>();
 
-        int maxDivisorNumber = 0;
-        int divisorNumber = 0;
-
-        checkDivisor(list, 8192);
 
         for (int i = 2; i <= 10000; i++) {
             int num = 1;
 
             if (!list.contains(i)) {
-                num = checkDivisor(list, i);
-                if (num > divisorNumber) {
-                    divisorNumber = num; // 약수개수
-                    maxDivisorNumber = i; // 가장 많은 약수를 가진 정수
-                }
+                num = checkDivisor(list, i); // 넣지 말고 최대값 뽑아서 높은거 있으면 clear하고 다시 넣어 , 같은거면 그냥 넣기
+                answer.add(new Pair(num, i));
             }
+        }
 
+        Collections.sort(answer);
+
+        Pair flag = answer.get(0);
+
+        for (int i = 0; i < answer.size(); i++) {
+
+
+            if (flag.getDivisorNumber() == answer.get(i).getDivisorNumber()) {
+                logger.info("가장 많은 약수를 가진 정수 {} , 약수의 개수는 {}", answer.get(i).getDivisorNumber(),
+                        answer.get(i).getNumber());
+            } else {
+                return;
+            }
         }
 
 
-        logger.info("가장 많은 약수를 가진 정수 {} , 약수의 개수는 {}", maxDivisorNumber, divisorNumber);
-
     }
+
+}
+
+class Pair implements Comparable {
+
+    private final int divisorNumber;
+    private final int number;
+
+
+    public Pair(int divisorNumber, int number) {
+        this.divisorNumber = divisorNumber;
+        this.number = number;
+    }
+
+    public int getDivisorNumber() {
+        return divisorNumber;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Pair p = (Pair) o;
+        return p.divisorNumber - this.divisorNumber;
+    }
+
 
 }
