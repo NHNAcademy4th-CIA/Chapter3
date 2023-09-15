@@ -8,7 +8,7 @@ class Exercise2 {
     public static void exercise2() {
         int maxCount = 0;
         int number = 2;
-        for (int i = 1; i < 10000; i++) {
+        for (int i = 1; i <= 10000; i++) {
             int count = maxDivisor(i);
             if (count > maxCount) {
                 maxCount = count;
