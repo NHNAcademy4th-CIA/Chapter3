@@ -22,23 +22,20 @@ public class Exercise3 {
         while (true) {
             logger.info("Enter simple expression : ");
             input = scanner.nextLine();
-            if (input.equals("0")) {
+            if (input.startsWith("0")) {
                 break;
             }
             st = new StringTokenizer(input);
             for (int i = 0; st.hasMoreTokens(); i++) {
                 String s = st.nextToken();
+                
                 if (Pattern.matches(number, s) || Pattern.matches(operator, s)) {
                     expression[i] = s;
-                } else {
-                    flag = false;
+                    continue;
                 }
+                throw new IllegalArgumentException("잘못된 입력입니다.");
             }
-            if (flag) {
-                logger.info("{} {} {} = {}", expression[0], expression[1], expression[2], calc(expression));
-            } else {
-                logger.warn("wrong input");
-            }
+            logger.info("{} {} {} = {}", expression[0], expression[1], expression[2], calc(expression));
         }
     }
 
