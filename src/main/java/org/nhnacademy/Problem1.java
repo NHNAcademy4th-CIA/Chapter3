@@ -19,11 +19,15 @@ public class Problem1 {
             int num2 = (int) (Math.random() * 6 + 1);
             count++;
 
-            if (num1 == num2 && num1 == 1) {
+            if (isSnakeEyes(num1,num2)) {
                 logger.info("총 주사위 돌린 횟수 {}", count);
                 return;
             }
         }
+    }
+
+    public static boolean isSnakeEyes(int num1 ,int num2 ){
+        return (num1+num2)==2;
     }
 
 
