@@ -1,4 +1,4 @@
-package org.nhnacademy;
+package org.nhnacademy.minju;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -23,7 +23,7 @@ public class Exercise5 {
                 // char value[](source of characters), int offset(initial offset), int count(length)
                 for (String str : strArr) {
                     int index = str.indexOf(":");
-                    String sales = str.substring(index + 3);
+                    String sales = str.substring(index + 1).trim();
                     if (sales.equals("no report received")) {
                         notAvailableCity++;
                     } else {
