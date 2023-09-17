@@ -1,8 +1,0 @@
-
-G	java:S106"+Replace this use of System.out by a logger.(÷¹®ï8½Â²ª©1
-G	java:S106"+Replace this use of System.out by a logger.(ž¢‹â8¾Â²ª©1
-L	java:S106"+Replace this use of System.out by a logger.(Ž³ð¸ûÿÿÿÿ8ý¼³ª©1
-F
-java:S1128")Remove this unused import 'java.io.File'.(†Ð¥Å8¾Â²ª©1
-P
-java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8¾Â²ª©1

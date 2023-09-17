@@ -1,0 +1,13 @@
+
+L
+java:S1197"*Move the array designators [] to the type.(§ÝÑÖùÿÿÿÿ8‰Ýˆø¨1
+L
+java:S1197"*Move the array designators [] to the type.(Œô£…ûÿÿÿÿ8ŠÝˆø¨1
+K
+java:S2140
+")Use "java.util.Random.nextInt()" instead.(ÀæáÐúÿÿÿÿ8ŠÝˆø¨1
+o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ýæÉÿÿÿÿÿ8‹Ýˆø¨1
+c
+java:S1126"AReplace this if-then-else statement by a single return statement.(èÑÞËüÿÿÿÿ8‹Ýˆø¨1
+I
+java:S1125&"'Remove the unnecessary boolean literal.(åÚ†¼üÿÿÿÿ8ôÓ‹ø¨1
