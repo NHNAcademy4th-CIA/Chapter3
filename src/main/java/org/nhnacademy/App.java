@@ -92,8 +92,7 @@ public class App {
     public static void Q5() {
         File note = new File("src/main/resources/sales.dat");
         int count = 0;
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(note));
+        try (BufferedReader br = new BufferedReader(new FileReader(note))){
             String line;
 
             while (!((line = br.readLine()) == null)) {
