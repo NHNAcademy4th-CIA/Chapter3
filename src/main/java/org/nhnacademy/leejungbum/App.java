@@ -1,4 +1,4 @@
-package org.nhnacademy;
+package org.nhnacademy.leejungbum;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.StringTokenizer;
-import org.nhnacademy.domain.*;
-import org.nhnacademy.domain.Operator.Expressions;
+import org.nhnacademy.leejungbum.domain.*;
+import org.nhnacademy.leejungbum.domain.Operator.Expressions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -139,26 +139,27 @@ public class App {
 
     }
     public static void Q7() {
-        int count = 1;
-        int birthDay3Count = 0;
-        int birthDay365Count = 0;
-        int birthDay365Check = 0;
-        while (birthDay3Count == 0 ||birthDay365Count==0) {
-            int ran = BirthDayRandom.random();
-            logger.debug("{}",ran);
-            if (birthDay3Count==0&& BirthDayRandom.Day3(ran)){
-                birthDay3Count=count;
-            }
-            if (birthDay365Count==0&&!BirthDayRandom.isPresent()){
-                birthDay365Count=count;
-            }
-            if(count==365)
-            {
-                birthDay365Check = BirthDayRandom.trueCount();
-            }
+        int count = 0;
+        int day;
+        do {
+            day = BirthDayRandom.random();
+            count++;
+        } while (!BirthDayRandom.Day3(day));
+        logger.info("가장먼저 3일이 된 날짜는 {}",day);
+        while (count<=365)
+        {
+            BirthDayRandom.random();
             count++;
         }
-        logger.info("생일이 3명이 같은경우는 {}번쨰에 나왔고\n365일이 지났을떄 {}명이 생일이며 \n 모든날짜에 생일이 있을려면 {}명 있어야한다",birthDay3Count,birthDay365Check,birthDay365Count);
+        logger.info("365일 이후 1일이상 나온 날짜 수 {}",BirthDayRandom.trueCount());
+        while (BirthDayRandom.isPresent())
+        {
+            BirthDayRandom.random();
+            count++;
+        }
+        logger.info("365일이 다 한번이상 나올때까지 몇번 시도 {}",count);
+
+
     }
 
     private static boolean isSnakeEye(int pip1, int pip2) {

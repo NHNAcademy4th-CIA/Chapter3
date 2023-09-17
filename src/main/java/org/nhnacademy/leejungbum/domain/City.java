@@ -1,4 +1,4 @@
-package org.nhnacademy.domain;
+package org.nhnacademy.leejungbum.domain;
 
 public class City {
     private final String name;

@@ -1,4 +1,4 @@
-package org.nhnacademy.domain;
+package org.nhnacademy.leejungbum.domain;
 
 import java.util.ArrayList;
 import java.util.List;

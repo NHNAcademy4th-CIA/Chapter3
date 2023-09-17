@@ -1,4 +1,4 @@
-package org.nhnacademy.domain;
+package org.nhnacademy.leejungbum.domain;
 
 public class Dice {
     private static final int pip = 6;

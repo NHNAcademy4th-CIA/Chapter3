@@ -1,4 +1,4 @@
-package org.nhnacademy.domain.Operator;
+package org.nhnacademy.leejungbum.domain.Operator;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
