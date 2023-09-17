@@ -1,0 +1,306 @@
+Blocks, Loops, and Branches
+
+자바에서는 6개의 제어구조를 가짐 
+
+block , while , do while , for , if , switch
+
+
+block 이란 
+가장 간단한 유형의 명령문 { 진술 } 
+{ } 이러한 경우도 가능하며 empty block 라고 한다.
+
+서브루틴의 정의또한 {} 이기도 하다 .
+서브루틴 = brace 안에 포함된 명령문 
+
+if문과 while 문 같은 것은 Control Abstraction 이다.
+(제어를 간략화 시킨다)
+실제로 기계어나 CPU작동 방식 몰라도 그냥 if else while 같은거 쓸 수 있다.
+
+또 변수는 Data Abstraction 의 예다.
+변수를 사용할떄 이름을 통해 정의하여 사용한다 .
+
+그 변수가 어느 메모리에 올라가있는지 , 차지하는 바이트수가 몇갠지 몰라도 쓸 수 있어
+
+변수값은 프로그램이 실행되는 시점에서 변수에 값이 할당된다는 것을
+컴파일러가 확인할 수 있는 경우에만 사용 가능 
+
+이를 definite assignment이라고 한다.
+
+int x;
+if{
+x=5;
+}
+else{
+x=4
+}
+sout(x)
+이런식으로 어느 경우에서든지 x값이 할당되도록 만듦.
+
+
+
+Algorithm Development
+
+알고리즘 = 작업 수행을 위해 단계별 절차로 구체화 하는것 
+
+
+
+The while and do..while Statements
+
+
+while(boolean Expression{ 피 식이 함인 경우 반복됨 , 이 걸 test라 함  
+    loop body 	
+} 
+
+while문에서 데이터의 끝을 나타내는 값을 
+sentinel value라한다(보초병,감시병)
+
+Ex) 0을 입력받기전까지 계속해서 입력 받아라 , 0 <- sentinal value 
+
+priming the loop (루프 준비)
+while문에서 입력이 0이상인지를 판별해 값을 받는다 했을때
+while문에 들어가기전에는 입력을 받은게 없기 떄문에
+while전에 입력을 받아야함 <- priming the loop (프라이밍 ==점화 == 결과를 촉발시킴)
+
+
+for(initlization ; test ; update)
+이런식으로 쓴다 ! 
+
+
+
+
+The if Statement
+
+Dangling = 허상 
+
+
+
+The switch Statement
+
+정수형(int,short,byte,char) , String , 열거형 
+enum 변수 또한 switch에 올 수 있음 
+
+
+
+Introduction to Exceptions and try..catch
+
+
+모든 예외는 Exception의 하위 클래스임
+
+Introduction to Arrays
+
+배열은 주소값이 이어져있는 형태임
+그래서 찾는거 매우 쉬워 , 시작 index 주소에서 +3 +5 이런식으로 찾기 가능함
+
+index = 배열의 위치 번호 
+
+
+보통의 경우 우리가 하는 것은 sequential access , 순차 접근
+for(int i=0;i<10;i++)
+이런식으로 접근하는 것 
+
+근데 배열은 Random Access 가 가능해 
+0,1,2,3,4,5 이럴 필요 없고
+
+그냥 arr[10] = 1  arr[5]= 2 arr[2] =0
+이렇게 접근 가능함 
+
+
+문제1번 
+What is an algorithm?
+
+알고리즘이란 특정한 연산을 하기위해 적합한 절차를 
+규정화 한것 입니다.
+
+문제2번
+Explain briefly what is meant by "pseudocode" and 
+how is it useful in the development of algorithms.
+
+수도코드란 
+프로그램 언어로 작성된 코드를(자바,C,C++등)
+그 자체로 보여주지 않고 사람이 이해하기 쉽도록 간략화 시킨 것입니다.
+예를들어 1부터 100까지 출력하는 프로그램이라면
+
+while (1 to 100 )
+	숫자 출력
+다음과 같이 작성 가능합니다.
+
+
+문제 3
+What is a block statement? How are block statements used in Java programs?
+
+block statement는 브라켓 {} 으로 묶인 모든 것을 의미합니다.
+또한 SubRoutine 에 정의이기도 합니다. 
+따라서 block statement는 모든 메서드 , 제어문 , Class 등에 쓰입니다.
+
+
+문제 4
+What is the main difference between a while loop and a do..while loop?
+
+while loop은 반복이 한번도 실행되지 않을 수도 있습니다.
+
+ex) while(false)  실행도 불가능
+하지만 do while은 무조건 한번은 실행이 됩니다
+따라서  다음과 같이 작성해도 무조건 body가 한번은 실행됩니다.
+do{
+}while(false);
+
+
+문제 5
+What does it mean to prime a loop?
+
+루프를 준비하는 것을 의미합니다.
+만약 while문에서 입력이 0이상인지를 판별해 body를 돌린다 했을때
+while전에 입력받은 값이 없다면 while문을 아예 돌릴수 없습니다.
+따라서 그전에 입력받는 수가 while loop를 돌리게 되고 그것이 priming number가 됩니다.
+
+
+문제 7
+Write a for loop that will print out all the multiples of 3 from 3 to 36, 
+that is: 3 6 9 12 15 18 21 24 27 30 33 36
+
+
+for(숫자 3 to 36 , 3씩 증감){
+	print 숫자;
+}
+
+
+
+
+문제 8
+
+Fill in the following main() routine so that it will ask the user to enter an integer, read the user's response, and tell the user whether the number entered is even or odd. (You can use TextIO.getInt() to read the integer. Recall that an integer n is even if n % 2 == 0.)
+
+public static void main(String[] args) {
+ 
+         // Fill in the body of this subroutine!
+ 
+}
+
+input number 
+if number%2==0  -> even
+else odd
+
+
+
+문제 9
+
+Write a code segment that will print out two different random integers selected from the range 
+1 to 10. All possible outputs should have the same probability. 
+Hint: You can easily select two random numbers, but you have to account for the fact that the two numbers
+that you pick might be the same.
+
+segment = 세그먼트 = 프로그램에 정의된 특정한 영역
+code segment = 실행될 명령어 들의 영역 
+data segment - 프로그램에 정의된 데이터들의 작업 영역 
+세그먼트 = 레지스터(명령어 ,데이터 저장하는데 사용)
+
+int num= (int)(Math.random()*10+1);
+int num2 = (int)(Math.random()*10+1);
+
+if(num!=num2)
+	sout(num+" "+num2);
+
+
+
+문제 10
+Suppose that s1 and s2 are variables of type String, whose values are expected to be string 
+representations of values of type int. Write a code segment that will compute and print the 
+integer sum of those values, or will print an error message if the values cannot successfully be 
+converted into integers. (Use a try..catch statement.)
+
+try{
+	int num=Integer.valueof(s1);
+	int num2=Integer.valueof(s2);
+}catchNumberFormatException e){
+	sout("숫자 형식이 아닙니다);
+}
+
+sout(num+num2);
+
+
+
+문제 11 
+
+Show the exact output that would be produced by the following main() routine:
+
+public static void main(String[] args) {
+    int N;
+    N = 1;
+    while (N <= 32) {
+       N = 2 * N;
+       System.out.println(N);   
+    }
+}
+
+
+output : 2,4,8,16,32
+
+
+
+
+
+문제 13 
+What output is produced by the following program segment? Why?
+ (Recall that name.charAt(i) is the i-th character in the string, name.)
+
+String name;
+int i;
+boolean startWord;
+
+name = "Richard M. Nixon";
+startWord = true;
+for (i = 0; i < name.length(); i++) {
+   if (startWord)
+      System.out.println(name.charAt(i));
+   if (name.charAt(i) == ' ')
+      startWord = true;
+   else
+      startWord = false;
+}
+
+
+output : RMN
+
+
+
+
+14번 문제
+
+
+Suppose that numbers is an array of type int[]. Write a code segment that will count 
+and output the number of times that the number 42 occurs in the array.
+
+
+int count=0;
+for(int i=0;i<numbers.length;i++){
+	if(numbers[i]==42)
+		count++;
+}
+sout(count);
+
+
+15번 문제
+
+Define the range of an array of numbers to be the maximum value in the array minus the minimum value. 
+Suppose that raceTimes is an array of type double[]. Write a code segment that will find and print the range of raceTimes.
+
+int min=987654321;
+int max=-987654321;
+for(int i=0;i<raceTimes .length;i++){
+	max=Math.max(max,raceTimes[i]);
+	min=Math.min(min,raceTimes[i]);
+}
+
+range is min to max 
+
+
+
+   
+
+
+
+
+
+
+
+
