@@ -5,6 +5,8 @@ n
 java:S2095`"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(‰“Öãÿÿÿÿÿ8´ú‡û¨1
 {
 java:S1450"^Remove the "stringTokenizer" field and declare it as a local variable in the relevant methods.(Ô¾¡ë8·ú‡û¨1
+X	java:S125"<This block of commented-out lines of code should be removed.(øò·²8’˜®•©1
+X	java:S125"<This block of commented-out lines of code should be removed.(¥å•ø8·©®•©1
 j	java:S100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ì¬ĞØ8¼ú‡û¨1
 o	java:S100/"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ«õ¿úÿÿÿÿ8¼ú‡û¨1
 j	java:S100>"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Öü›„8½ú‡û¨1
@@ -13,7 +15,8 @@ L	java:S106X"+Replace this use of System.out by a logger.(Å­Ëİúÿÿÿÿ8Àú‡û¨1
 o	java:S100\"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Š°æíúÿÿÿÿ8Àú‡û¨1
 F
 java:S1940c")Use the opposite operator ("!=") instead.(Ÿ§…8Âú‡û¨1
-X	java:S125j"<This block of commented-out lines of code should be removed.(•ÍêŠ8Âú‡û¨1
+L	java:S106h"+Replace this use of System.out by a logger.(æõƒ•şÿÿÿÿ8°•©1
+X	java:S125k"<This block of commented-out lines of code should be removed.(•ÍêŠ8Âú‡û¨1
 G
-java:S1197u"*Move the array designators [] to the type.(âŸ©É8Ãú‡û¨1
-p	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÅäÙÑüÿÿÿÿ8Äú‡û¨1
+java:S1197v"*Move the array designators [] to the type.(âŸ©É8Ãú‡û¨1
+p	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÅäÙÑüÿÿÿÿ8Äú‡û¨1

@@ -22,13 +22,13 @@ public class App {
     private static Logger logger = LoggerFactory.getLogger(App.class);
 
     public static void main(String[] args) {
-        logger.info("{}", Q1());
-        logger.info("1~10000중 가장 큰 값은? {}", Q2());
-        Q3();
-        Q4();
+//        logger.info("{}", Q1());
+//        logger.info("1~10000중 가장 큰 값은? {}", Q2());
+//        Q3();
+//        Q4();
         Q5();
-        q6();
-        Q7();
+//        q6();
+//        Q7();
     }
 
     public static int Q1() {
@@ -85,7 +85,7 @@ public class App {
         String line = "He said, \"That's not a good idea.\"";
         List<String> answer = EnglishToken.split(line);
         for (String s : answer) {
-            System.out.println(s);
+            logger.info("{}",s);
         }
     }
 
@@ -101,6 +101,7 @@ public class App {
                     StringTokenizer stringTokenizer = new StringTokenizer(line, ":");
                     String name = stringTokenizer.nextToken();
                     String value = stringTokenizer.nextToken();
+                    System.out.println(name+"///"+value);
                     new City(name, value);
                 } catch (NoSuchElementException e) {
 //                    logger.warn("no report received");
