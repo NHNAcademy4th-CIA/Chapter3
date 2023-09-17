@@ -12,7 +12,12 @@ public class Divisors {
             if(number%i==0)
             {
                 lastNum = number/i;
+
                 count+=2;
+                if(lastNum==number)
+                {
+                    count--;
+                }
             }
         }
         return count;
