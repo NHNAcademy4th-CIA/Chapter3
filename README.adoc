@@ -1,0 +1,65 @@
+= Chapter 3 프로그래밍 문제 및 퀴즈 정의
+
+=== link:https://math.hws.edu/javanotes/c3/exercises.html[Programing Exercise For Chapter 3]
+
+---
+
+==  자체 Quiz
+
+* Statement 와 Expression 차이
+
+.Answer
+[%collapsible%open]
+====
+
+Statement는 값이 변화하는 것을 의미합니다 +
+예를 들어 다음과 같다면 식이라 할 수 있습니다. +
+num = 6 + 9 + 5
+
+Expression 은 값의 변화가 없음을 의미합니다. +
+예를 들어 6 + 9 + 5 자체는 값이 변화하지 않습니다. +
+
+정규표현식도 Expression 에 대표적인 예시입니다. +
+Expression? -> Regular Expression ^[0-9]$
+
+
+
+====
+
+* SubTyping 이란 무엇인가
+
+.Answer
+[%collapsible%open]
+====
+서브타이핑은 타입의 상속을 이용한 방법으로 +
+extends나 implements를 통해 구현이 된다. +
+
+[source,java]
+----
+public class Main {
+public static void main(String[] args) {
+
+        calc(new Adder(), 1, 2); // 서브타입 관계기 때문에 Adder타입이 올 수 있다.
+    }
+
+
+    class Adder implements BinaryOp {
+        @Override
+        public int apply(int i, int j) {
+            return i = j;
+        }
+     }
+}
+
+@FunctionalInterface
+interface BinaryOp {
+int apply(int i, int j);
+}
+----
+
+====
+
+
+
+
+
